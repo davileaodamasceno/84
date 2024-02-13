@@ -21,45 +21,49 @@ function uploadimg() {
 
 window.addEventListener("keydown", my_keydown);
 
-function my_keydown(e)
-{
+function my_keydown(e) {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
-	
-		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
-	althabetkey();
-	document.getElementById("d1").innerHTML="Você pressionou o símbolo ou outra tecla";
 
-		else{
+	if ((keyPressed >= 97 && keyPressed <= 122) || (keyPressed >= 65 && keyPressed <= 90)) {
+		aplhabetkey();
+		document.getElementById("d1").innerHTML = "Você pressionou o símbolo ou outra tecla";
+	}else if((keyPressed >= 48 && keyPressed <= 57)){
+		numberkey();
+		document.getElementById("d1").innerHTML = "You pressed number key";
+	}else if((keyPressed == 17 || keyPressed == 18 ||  keyPressed == 27)){
+		specialkey();
+		document.getElementById("d1").innerHTML = "You pressed special key";
+	}else if((keyPressed >= 37 && keyPressed <= 40 )){
+		arrowkey();
+		document.getElementById("d1").innerHTML = "You pressed arrowkey key";
+	}
+	
+	
+	else {
 		otherkey();
-		document.getElementById("d1").innerHTML="You pressed symbol or other key";
+		document.getElementById("d1").innerHTML = "You pressed symbol or other key";
 	}
 }
 
-function aplhabetkey()
-{
-	img_image="alfabeto.png";
+function aplhabetkey() {
+	img_image = "alfabeto.png";
 	add();
 
 }
-function numberkey()
-{
-	img_image="número.png";
+function numberkey() {
+	img_image = "número.png";
 	add();
 }
-function arrowkey()
-{
-	img_image="direcional.png";
+function arrowkey() {
+	img_image = "direcional.png";
 	add();
 }
-function specialkey()
-{
-	img_image="especial.png";
+function specialkey() {
+	img_image = "especial.png";
 	add();
 }
-function otherkey()
-{
-	img_image="outras.png";
+function otherkey() {
+	img_image = "outras.png";
 	add();
 }
-	
